@@ -8,21 +8,20 @@ const incomeSlice = createSlice({
   name: "income",
   initialState,
   reducers: {
-    setIncome: (state, action) => {
-      state.amount = action.payload;
-    },
     creditIncome: (state, action) => {
-      state.amount = state.amount + action.payload;
+      state.amount = parseInt((state.amount + action.payload)?.toFixed(2));
     },
     debitIncome: (state, action) => {
-      state.amount =
-        state.amount >= action.payload
+      state.amount = parseInt(
+        (state.amount >= action.payload
           ? state.amount - action.payload
-          : state.amount;
+          : state.amount
+        )?.toFixed(2)
+      );
     },
   },
 });
 
-export const { setIncome, creditIncome, debitIncome } = incomeSlice.actions;
+export const { creditIncome, debitIncome } = incomeSlice.actions;
 
 export default incomeSlice.reducer;

@@ -4,24 +4,32 @@ const Header = () => {
   const { amount } = useSelector((state) => state.income);
 
   return (
-    <header className="py-6 container mx-auto flex justify-between items-center text-xl">
+    <header className="py-6 container mx-auto flex justify-between items-center text-xl sticky top-0 bg-gray-100 z-10">
       <div className="flex gap-x-16 items-center">
         <div className="logo text-2xl font-bold text-blue-200">Logo</div>
         <nav>
           <ul className="flex space-x-8">
             <li>
-              <a href="#library" className="text-gray-600 hover:text-blue-200">
-                Library
+              <a href="#income" className="text-gray-600 hover:text-blue-200">
+                Income & Expense
               </a>
             </li>
             <li>
-              <a href="#subjects" className="text-gray-600 hover:text-blue-200">
-                Subjects
+              <a
+                href="#budgeting"
+                className="text-gray-600 hover:text-blue-200"
+              >
+                Budgeting Tool
               </a>
             </li>
             <li>
-              <a href="#paths" className="text-gray-600 hover:text-blue-200">
-                Paths
+              <a href="#goals" className="text-gray-600 hover:text-blue-200">
+                Saving Goals
+              </a>
+            </li>
+            <li>
+              <a href="#reports" className="text-gray-600 hover:text-blue-200">
+                Reports
               </a>
             </li>
           </ul>

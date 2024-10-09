@@ -1,21 +1,16 @@
 import Budgeting from "../Components/BudgetingTool";
 import IncomeAction from "../Components/IncomeAction";
+import SavingGoals from "../Components/SavingGoals";
 import { persistor } from "../redux/store";
 
 const Dashboard = () => {
+  // persistor.purge();
   return (
-    <div className="text-center">
+    <>
       <IncomeAction />
-      {/* <Budgeting /> */}
-
-      {/* <button
-        onClick={() => {
-          persistor.purge();
-        }}
-      >
-        Reset
-      </button> */}
-    </div>
+      <Budgeting />
+      <SavingGoals />
+    </>
   );
 };
 
